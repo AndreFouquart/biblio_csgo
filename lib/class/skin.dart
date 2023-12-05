@@ -13,7 +13,7 @@ class Skin {
 
     return Skin(
       json['id'] ?? '',
-      json['name'] ?? '',
+      json['pattern']['name'] ?? '',
       json['image'] ?? '',
     );
   }
