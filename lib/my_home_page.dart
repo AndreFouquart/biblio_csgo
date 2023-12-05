@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'armeSkin.dart';
 import 'fonction/chargementSkin.dart';
 import 'class/skin.dart';
 
@@ -42,6 +43,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 placeholder: (context, url) => CircularProgressIndicator(),
                 errorWidget: (context, url, error) => Icon(Icons.error),
               ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ArmeSkin()),
+                );
+              },
             );
           })),
       floatingActionButton: FloatingActionButton(
