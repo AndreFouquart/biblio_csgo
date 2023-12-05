@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'armeSkin.dart';
-import 'fonction/chargementSkin.dart';
 import 'class/skin.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -15,16 +12,16 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    _chargeSkins();
+    //_chargeSkins();
   }
 
-  Future<void> _chargeSkins() async {
+  /*Future<void> _chargeSkins() async {
     final api = CSGOApi('https://bymykel.github.io/CSGO-API/api/fr/skins.json');
     final chargementSkins = await api.initArme(skins);
     setState(() {
       skins = chargementSkins;
     });
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('CSGO TEST API'),
       ),
-      body: ListView.builder(
+      /*body: ListView.builder(
           itemCount: skins.length,
           itemBuilder: ((context, index) {
             return ListTile(
@@ -43,19 +40,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 placeholder: (context, url) => CircularProgressIndicator(),
                 errorWidget: (context, url, error) => Icon(Icons.error),
               ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ArmeSkin()),
-                );
-              },
             );
-          })),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+          })
+      ),*/
     );
   }
 }

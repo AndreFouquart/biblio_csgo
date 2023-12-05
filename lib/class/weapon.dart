@@ -1,14 +1,21 @@
 class Weapon {
-  final String _id;
-  final String _name;
+  final String id;
+  final String name;
 
-  Weapon(this._id, this._name);
+  Weapon(this.id, this.name);
 
   String getId() {
-    return this._id;
+    return this.id;
   }
 
   String getName() {
-    return this._name;
+    return this.name;
+  }
+
+  factory Weapon.fromJson(Map<String, dynamic> json) {
+    return Weapon(
+      json['weapon']['id'],
+      json['weapon']['name'],
+    );
   }
 }

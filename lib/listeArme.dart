@@ -1,6 +1,8 @@
 import 'package:biblio_csgo/class/weapon.dart';
+import 'package:biblio_csgo/skinArme.dart';
 import 'package:flutter/material.dart';
 import 'fonction/chargementArme.dart';
+import 'fonction/chargementSkin.dart';
 
 class ListeArme extends StatefulWidget {
   const ListeArme({super.key});
@@ -34,11 +36,27 @@ class _ListeArmeState extends State<ListeArme> {
       body: ListView.builder(
           itemCount: liste.length,
           itemBuilder: ((context, index) {
-            return ListTile(
-              title: Text(liste[index].getName()),
-              subtitle: Text(liste[index].getId()),
+            return InkWell(
+              onTap: () async {
+                final skinApi = SkinApi('https://bymykel.github.io/CSGO-API/api/fr/skins.json');
+                final skins = await skinApi.getSkinsForWeapon(liste[index].getId());
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                    builder: (context) => ArmeDetailPage(
+                      armeName: liste[index].getName(),
+                      skins: skins,
+                    ),
+                  )
+                );
+              },
+              child:ListTile(
+                title: Text(liste[index].getName()),
+                subtitle: Text(liste[index].getId()),
+              ),
             );
-          })),
+          })
+      ),
     );
   }
 }
