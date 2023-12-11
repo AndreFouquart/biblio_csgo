@@ -23,7 +23,6 @@ class SkinApi {
       }
       return skins;
     } else {
-      // Gérez l'erreur de chargement et affichez un message approprié
       throw Exception('Failed to load skins');
     }
   }

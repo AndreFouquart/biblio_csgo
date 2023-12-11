@@ -13,6 +13,7 @@ class ListeArme extends StatefulWidget {
 
 class _ListeArmeState extends State<ListeArme> {
   List<Weapon> liste = [];
+  @override
   void initState() {
     super.initState();
     _chargeArmes();
@@ -31,7 +32,7 @@ class _ListeArmeState extends State<ListeArme> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('CSGO TEST API'),
+        title: const Text('CSGO TEST API'),
       ),
       body: ListView.builder(
         itemCount: liste.length,
@@ -55,13 +56,13 @@ class _ListeArmeState extends State<ListeArme> {
             child: ListTile(
               title: Text(
                 liste[index].getName(),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white, // Changer la couleur du texte à blanc
                 ),
               ),
               subtitle: Text(
                 liste[index].getId(),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white, // Changer la couleur du texte à blanc
                 ),
               ),

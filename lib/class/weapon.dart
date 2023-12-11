@@ -5,11 +5,11 @@ class Weapon {
   Weapon(this.id, this.name);
 
   String getId() {
-    return this.id;
+    return id;
   }
 
   String getName() {
-    return this.name;
+    return name;
   }
 
   factory Weapon.fromJson(Map<String, dynamic> json) {

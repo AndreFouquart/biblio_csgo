@@ -12,7 +12,7 @@ class WeaponApi {
 
     if (response.statusCode == 200) {
       List responseBody = jsonDecode(response.body);
-      Set<String> weaponNamesSet = Set<String>();
+      Set<String> weaponNamesSet = <String>{};
 
       for (int i = 0; i < responseBody.length; i++) {
         if (responseBody[i]['weapon'] != null &&

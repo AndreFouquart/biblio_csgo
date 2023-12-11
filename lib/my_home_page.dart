@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'class/skin.dart';
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -27,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('CSGO TEST API'),
+        title: const Text('CSGO TEST API'),
       ),
       /*body: ListView.builder(
           itemCount: skins.length,
