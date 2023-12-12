@@ -42,7 +42,7 @@ class _ListeArmeState extends State<ListeArme> {
               final skinApi = SkinApi(
                   'https://bymykel.github.io/CSGO-API/api/fr/skins.json');
               final skins =
-              await skinApi.getSkinsForWeapon(liste[index].getId());
+                  await skinApi.getSkinsForWeapon(liste[index].getId());
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -56,12 +56,6 @@ class _ListeArmeState extends State<ListeArme> {
             child: ListTile(
               title: Text(
                 liste[index].getName(),
-                style: const TextStyle(
-                  color: Colors.white, // Changer la couleur du texte à blanc
-                ),
-              ),
-              subtitle: Text(
-                liste[index].getId(),
                 style: const TextStyle(
                   color: Colors.white, // Changer la couleur du texte à blanc
                 ),

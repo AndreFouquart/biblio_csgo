@@ -45,8 +45,9 @@ class ArmeDetailPage extends StatelessWidget {
                     child: CachedNetworkImage(
                       imageUrl: skins[index].getImage(),
                       placeholder: (context, url) =>
-                      const CircularProgressIndicator(),
-                      errorWidget: (context, url, error) => const Icon(Icons.error),
+                          const CircularProgressIndicator(),
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
                       fit: BoxFit.cover,
                     ),
                   ),
