@@ -1,7 +1,7 @@
 import 'package:biblio_csgo/class/skin.dart';
 import 'package:path/path.dart';
-import 'package:sqflite/sqflite.dart';
 import 'dart:async';
+import 'package:sqflite/sqflite.dart';
 
 class DataBaseCSGO {
   static Database? _db;
@@ -48,15 +48,11 @@ class DataBaseCSGO {
     );
   }
 
-  // A method that retrieves all the dogs from the dogs table.
   Future<List<Skin>> afficheSkin() async {
-    // Get a reference to the database.
     final db = await _db;
 
-    // Query the table for all The Dogs.
     final List<Map<String, dynamic>> maps = await db!.query('inventaire');
 
-    // Convert the List<Map<String, dynamic> into a List<Dog>.
     return List.generate(maps.length, (i) {
       return Skin(
         maps[i]['id'] as String,

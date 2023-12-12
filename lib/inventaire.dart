@@ -13,13 +13,17 @@ class Inventaire extends StatefulWidget {
 class _InventaireState extends State<Inventaire> {
   List<Skin> skin = [];
 
+  @override
   void initState() {
     super.initState();
     chargement();
   }
 
   void chargement() async {
-    skin = await DataBaseCSGO().afficheSkin();
+    List<Skin> skins = await DataBaseCSGO().afficheSkin();
+    setState(() {
+      skin = skins;
+    });
   }
 
   @override
@@ -70,9 +74,10 @@ class _InventaireState extends State<Inventaire> {
                         ),
                       ),
                       IconButton(
-                          onPressed: () {
-                            DataBaseCSGO()
-                                .deleteInventaireSkin(skin[index].getId());
+                          onPressed: () async {
+                              await DataBaseCSGO()
+                                  .deleteInventaireSkin(skin[index].getId());
+                              chargement();
                           },
                           icon: Icon(Icons.delete))
                     ]),

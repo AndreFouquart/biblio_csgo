@@ -77,7 +77,7 @@ class InfoArme extends StatelessWidget {
                         onPressed: () {
                           DataBaseCSGO().insertSkinInventory(skin);
                         },
-                        icon: Icon(Icons.add))
+                        icon: Icon(Icons.add,color: Colors.white,))
                   ],
                 ),
               ],
