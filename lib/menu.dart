@@ -43,7 +43,10 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   Navigator.pushNamed(context, "/arme");
                 }),
             IconButton(
-                icon: Icon(Icons.inventory_2_outlined), onPressed: () {}),
+                icon: Icon(Icons.inventory_2_outlined),
+                onPressed: () {
+                  Navigator.pushNamed(context, "/inventaire");
+                }),
             IconButton(
                 icon: Icon(Icons.favorite_border_outlined), onPressed: () {}),
           ],

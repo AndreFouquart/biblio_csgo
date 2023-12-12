@@ -1,3 +1,4 @@
+import 'package:biblio_csgo/class/database.dart';
 import 'package:flutter/material.dart';
 import 'package:biblio_csgo/class/skin.dart';
 
@@ -72,6 +73,11 @@ class InfoArme extends StatelessWidget {
                         color: Colors.blue,
                       ),
                     ),
+                    IconButton(
+                        onPressed: () {
+                          DataBaseCSGO().insertSkinInventory(skin);
+                        },
+                        icon: Icon(Icons.add))
                   ],
                 ),
               ],

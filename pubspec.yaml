@@ -34,6 +34,9 @@ dependencies:
   basic_utils: ^5.7.0
   intl: ^0.18.1
   cached_network_image: ^3.3.0
+  sqflite: ^2.3.0
+  path_provider: ^2.1.1
+  path: ^1.8.3
 
 
   # The following adds the Cupertino Icons font to your application.

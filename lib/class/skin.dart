@@ -7,6 +7,16 @@ class Skin {
 
   Skin(this._id, this._name, this._image, this._minFloat, this._maxFloat);
 
+  Map<String, dynamic> toMap() {
+    return {
+      'id': _id,
+      'name': _name,
+      'image': _image,
+      'minFloat': _minFloat,
+      'maxFloat': _maxFloat,
+    };
+  }
+
   factory Skin.fromJson(Map<String, dynamic>? json) {
     if (json == null) {
       throw const FormatException("Failed to load skin. JSON is null.");
